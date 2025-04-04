@@ -1,0 +1,23 @@
+.shipping-form {
+    padding: 2rem;
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .shipping-form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .update-btn {
+    padding: 0.6rem 1.2rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

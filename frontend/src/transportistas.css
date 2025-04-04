@@ -1,0 +1,32 @@
+.transportistas-container {
+    padding: 1rem;
+  }
+  
+  .transportistas-actions {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  
+  .transportistas-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    visibility: hidden;
+  }
+  
+  .transportistas-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transportistas-table th,
+  .transportistas-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+  }
+  
+  .transportistas-table tr.selected {
+    background-color: #d0ebff;
+  }
+  
