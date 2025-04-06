@@ -86,7 +86,6 @@ function Products() {
         throw new Error('Fallo al eliminar el producto');
       }
 
-      // Remove from local state
       setProducts((prev) => prev.filter((p) => p.producto_id !== selectedId));
       setSelectedId(null);
     } catch (err) {

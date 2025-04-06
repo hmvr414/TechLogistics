@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useState } from 'react';
 import Login from './login';
 import Dashboard from './dashboard';
-import Store from './store'; // client-facing component
+import Store from './store'; 
 
 function App() {
   const [session, setSession] = useState(() => {
