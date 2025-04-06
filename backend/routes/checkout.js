@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
     JOIN productos p ON c.producto_id = p.producto_id
     WHERE c.cliente_id = ?
   `;
-console.log('Retrieving cart for cliente_id:', cliente_id);
+console.log('Recuperando carrito para cliente cliente_id:', cliente_id);
   db.query(getCartQuery, [cliente_id], (err, cartItems) => {
     if (err) return res.status(500).json({ success: false, message: 'Failed to get cart' });
     if (cartItems.length === 0) return res.status(400).json({ success: false, message: 'Cart is empty' });
@@ -41,7 +41,7 @@ console.log('Retrieving cart for cliente_id:', cliente_id);
         if (err) return res.status(500).json({ success: false, message: 'Failed to create order details' });
 
         db.query('DELETE FROM carrito WHERE cliente_id = ?', [cliente_id], (err) => {
-          if (err) console.warn('Order created but failed to clear cart');
+          if (err) console.warn('Pedido creado pero fallo al limpiar el carrito');
 
           const insertEnvioQuery = `
         INSERT INTO envios (
@@ -57,12 +57,12 @@ console.log('Retrieving cart for cliente_id:', cliente_id);
 
         db.query(insertEnvioQuery, [pedido_id, direccion], (err) => {
         if (err) {
-            console.error('Failed to save shipping info:', err);
+            console.error('Error creando el envio:', err);
             return res.status(500).json({ success: false, message: 'Failed to save shipping info' });
         }
 
         db.query('DELETE FROM carrito WHERE cliente_id = ?', [cliente_id], (err) => {
-            if (err) console.warn('Order created but failed to clear cart');
+            if (err) console.warn('Orden creada pero fallo al limpiar el carrito');
             res.json({ success: true, pedido_id });
         });
         });

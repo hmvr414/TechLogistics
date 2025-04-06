@@ -6,8 +6,8 @@ const db = require('../db');
 router.get('/', (req, res) => {
   db.query('SELECT * FROM productos', (err, results) => {
     if (err) {
-      console.error('Error fetching products:', err);
-      res.status(500).json({ error: 'Failed to fetch products' });
+      console.error('Error recuperando productos:', err);
+      res.status(500).json({ error: 'Error recuperando productos' });
       return;
     }
 
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 
   db.query(query, [nombre, descripcion, precio, peso], (err, result) => {
     if (err) {
-      console.error('Failed to insert product:', err);
+      console.error('Error al insertar un producto:', err);
       return res.status(500).json({ success: false, message: 'Error saving product' });
     }
 
@@ -42,7 +42,7 @@ router.delete('/:id', (req, res) => {
 
   db.query(query, [id], (err, result) => {
     if (err) {
-      console.error('Error deleting product:', err);
+      console.error('Error eliminado el producto:', err);
       return res.status(500).json({ success: false, message: 'Error deleting product' });
     }
 
@@ -63,7 +63,7 @@ router.put('/:id', (req, res) => {
 
   db.query(query, [nombre, descripcion, precio, peso, id], (err, result) => {
     if (err) {
-      console.error('Error updating product:', err);
+      console.error('Error error actualizando el producto:', err);
       return res.status(500).json({ success: false, message: 'Error updating product' });
     }
 

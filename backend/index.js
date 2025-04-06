@@ -12,7 +12,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Hardcoded credentials
 const USERNAME = 'admin';
 const PASSWORD = '123456';
 
@@ -26,7 +25,7 @@ app.post('/login', (req, res) => {
     return res.json({ success: true, role: 'admin' });
   }
 
-  // clients login
+  // clientes login
   const query = 'SELECT * FROM clientes WHERE username = ? AND password = ?';
   console.log('Username:', username);
   console.log('Password:', password);

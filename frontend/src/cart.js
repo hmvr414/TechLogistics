@@ -13,7 +13,7 @@ function Cart({ clientId, onBack, onCheckout }) {
       const data = await res.json();
       setCart(data);
     } catch (err) {
-      console.error('Failed to fetch cart:', err);
+      console.error('Error cargando el carrito:', err);
     }
     setLoading(false);
   };
@@ -31,7 +31,7 @@ function Cart({ clientId, onBack, onCheckout }) {
       });
       fetchCart();
     } catch (err) {
-      console.error('Error updating quantity:', err);
+      console.error('Error actualizando la cantidad:', err);
     }
   };
 

@@ -22,7 +22,7 @@ router.get('/:cliente_id', (req, res) => {
 
   db.query(query, [cliente_id], (err, results) => {
     if (err) {
-      console.error('Failed to retrieve orders:', err);
+      console.error('Fallo al recuperar los pedidos:', err);
       return res.status(500).json({ success: false });
     }
     res.json(results);
@@ -49,8 +49,8 @@ router.get('/admin/:cliente_id', (req, res) => {
   
     db.query(query, [cliente_id], (err, results) => {
       if (err) {
-        console.error('Error fetching admin orders:', err);
-        return res.status(500).json({ error: 'Failed to fetch orders' });
+        console.error('Fallo al recuperar los pedidos:', err);
+        return res.status(500).json({ error: 'Error recuperando ordenes' });
       }
       res.json(results);
     });

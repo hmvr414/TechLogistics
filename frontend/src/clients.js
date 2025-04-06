@@ -58,7 +58,7 @@ function Clients() {
             <th>Dirección</th>
             <th>Teléfono</th>
             <th>Email</th>
-            <th>Actions</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>

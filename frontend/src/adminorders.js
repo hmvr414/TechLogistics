@@ -18,19 +18,19 @@ function AdminOrders({ clientId, clientName, onBack }) {
     <ShippingDetails pedidoId={viewingShipping} onBack={() => setViewingShipping(null)} />
   ) : (
     <div className="orders-container">
-      <h2>Orders for {clientName}</h2>
-      <button onClick={onBack}>⬅ Back to Clients</button>
+      <h2>Pedidos para {clientName}</h2>
+      <button onClick={onBack}>⬅ Volver a clientes</button>
       {orders.length === 0 ? (
-        <p>No orders found.</p>
+        <p>No se encontraron pedidos.</p>
       ) : (
         <table className="orders-table">
           <thead>
             <tr>
-                <th>Order ID</th>
-                <th>Date</th>
+                <th>Pedido ID</th>
+                <th>Fecha</th>
                 <th>Total</th>
-                <th>Details</th>
-                <th>Shipping</th> {/* ✅ New column */}
+                <th>Detalles</th>
+                <th>Envio</th> 
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@ function AdminOrders({ clientId, clientName, onBack }) {
                 <td>{o.productos}</td>
                 <td>
                     <button onClick={() => setViewingShipping(o.pedido_id)}>
-                        Shipping Details
+                        Detalles del envío
                     </button>
                 </td>
                 </tr>

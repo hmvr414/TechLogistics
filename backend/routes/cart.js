@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
 
   db.query(query, [cliente_id, producto_id, cantidad, cantidad], (err, result) => {
     if (err) {
-      console.error('Error adding to cart:', err);
+      console.error('Error agregando a carrito:', err);
       return res.status(500).json({ success: false, message: 'Error updating cart' });
     }
 
@@ -36,7 +36,7 @@ router.get('/:cliente_id', (req, res) => {
   
     db.query(query, [cliente_id], (err, results) => {
       if (err) {
-        console.error('Error fetching cart:', err);
+        console.error('Error recuperando el carrito:', err);
         return res.status(500).json({ success: false });
       }
   

@@ -6,8 +6,8 @@ const db = require('../db');
 router.get('/', (req, res) => {
   db.query('SELECT * FROM transportistas', (err, results) => {
     if (err) {
-      console.error('Error fetching transportistas:', err);
-      return res.status(500).json({ error: 'Failed to fetch transportistas' });
+      console.error('Error recuperando los transportistas:', err);
+      return res.status(500).json({ error: 'Fallo recuperando los transportistas' });
     }
     res.json(results);
   });

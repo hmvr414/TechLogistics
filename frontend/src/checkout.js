@@ -33,7 +33,7 @@ function Checkout({ clientId, onBack }) {
       setPedidoId(data.pedido_id);
       setDone(true);
     } else {
-      alert(data.message || 'Checkout failed');
+      alert(data.message || 'Fallo en la creacion de pedido');
     }
   };
 
@@ -88,7 +88,7 @@ function Checkout({ clientId, onBack }) {
           <div className="checkout-summary">
             <strong>Total: ${total}</strong>
             <button className="checkout-btn" onClick={handleCheckout}>
-              ✅ Confirm Order
+              ✅ Confirmar Pedido
             </button>
           </div>
         </>

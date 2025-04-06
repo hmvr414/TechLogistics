@@ -43,7 +43,7 @@ router.put('/:pedido_id', (req, res) => {
     [estado_id, pedido_id],
     (err) => {
       if (err) {
-        console.error('Failed to update shipping state:', err);
+        console.error('Fallo actualizando el estado de envío:', err);
         return res.status(500).json({ success: false });
       }
       res.json({ success: true });
